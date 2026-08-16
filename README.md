@@ -34,12 +34,19 @@ fields @timestamp, message, event.httpMethod, event.path
 ## インストール
 
 Lambda Layer として使う場合は後述の「Layer のビルド」を参照。
-ローカルやテストから使う場合は pip で直接入れる。
+
+このリポジトリで開発・テストする場合は、ローカルのソースを編集可能モードで入れる。
 
 ```bash
 pip install -e .
-# または
-pip install -r tests/requirements.txt
+pip install pytest  # テストを実行する場合
+```
+
+別プロジェクトから依存として使う場合は GitHub から入れる。
+`tests/requirements.txt` はこの形式で 1 行だけ記載してある。
+
+```bash
+pip install "lambda_json_logger @ git+https://github.com/yosuke318/lambda_json_logger.git"
 ```
 
 ## 使い方

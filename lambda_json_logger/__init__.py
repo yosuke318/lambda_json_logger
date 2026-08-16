@@ -1,2 +1,2 @@
-from .lambda_json_logger import getLambdaJsonLoggerInstance, LambdaJsonFormatter
-__all__= ["getLambdaJsonLoggerInstance", "LambdaJsonFormatter"]
+from .lambda_json_logger import getLambdaJsonLoggerInstance
+__all__= ["getLambdaJsonLoggerInstance"]

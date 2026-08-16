@@ -109,13 +109,20 @@ def test_event_is_absent_when_not_passed():
     assert "event" not in json.loads(buffer.getvalue())
 
 
+class Unserializable:
+    """Not JSON-serializable, but with a stable __str__ for assertions."""
+
+    def __str__(self):
+        return "unserializable-value"
+
+
 def test_unserializable_event_does_not_break_logging():
-    logger, buffer = _capture(event={"ctx": object()})
+    logger, buffer = _capture(event={"ctx": Unserializable()})
     logger.info("weird event")
 
     record = json.loads(buffer.getvalue())
     assert record["message"] == "weird event"
-    assert record["event"]["ctx"].startswith("<object object at")
+    assert record["event"]["ctx"] == "unserializable-value"
 
 
 def test_exception_traceback_is_captured():
