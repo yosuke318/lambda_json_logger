@@ -1,6 +1,10 @@
 """Checks for lambda_json_logger.
 
-Run with `pytest tests/test.py` or `python tests/test.py`.
+Requires lambda_json_logger to be importable. Either install it from the repo
+root (`pip install -e .`), or put the repo root on the import path:
+
+    pytest tests/test.py
+    PYTHONPATH=. python tests/test.py
 """
 import io
 import json
