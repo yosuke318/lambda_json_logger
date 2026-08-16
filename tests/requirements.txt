@@ -1,1 +1,1 @@
-https://github.com/yosuke318/lamdba_json_logger.git
+https://github.com/yosuke318/lambda_json_logger.git
