@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Lambda layer build output
+python/
+layer.zip
+
+# Virtual environments
+.venv/
+venv/
+
+# Editors
+.idea/
+.vscode/
+
+# OS
+.DS_Store
